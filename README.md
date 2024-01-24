@@ -1,4 +1,4 @@
-# NILM ESDA 2022 Project (**ONGOING**)
+# NILM ESDA 2022 Project (*ONGOING*)
 
 ## Project Overview
 This project is an ongoing effort to use data frome the 2022 Kaggle ESDA NILM (Non-Intrusive Load Monitoring) competition to demonstrate my abilites in data science and machine learning. The challenge involves classifying appliances based on their energy consumption patterns using numerical time-series data. The goal is to develop a predictive model that can accurately determine the type of appliance from its unique energy usage profile.
