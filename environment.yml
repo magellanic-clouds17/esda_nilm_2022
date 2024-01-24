@@ -9,3 +9,5 @@ dependencies:
   - seaborn
   - scikit-learn
   - xgboost
+  - ipykernel
+  - statsmodels
