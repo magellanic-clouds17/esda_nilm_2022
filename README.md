@@ -15,4 +15,7 @@ The approach for this project will follow these steps:
 5. **Model Training and Validation**: Implement a rigorous training and validation process to fine-tune the model and prevent overfitting.
 6. **Performance Evaluation**: Use appropriate metrics to assess the model's predictive accuracy and its ability to generalize to unseen data.
 
+## Current Score on Kaggle Competition 
+
+
 ---
