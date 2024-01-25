@@ -38,7 +38,17 @@ df.isnull().sum() # appliances has 20 nan values, all other have no missing valu
 # drop nan values
 df.dropna(inplace=True)
 
-# remove target variable
+# check for duplicates
+df.duplicated().sum()
+
+# show duplicates
+df[df.duplicated(keep=False)]
+
+# remove duplicates
+df.drop_duplicates(inplace=True)
+
+# remove target variable and save it as a series to be added back later
+appliances = df['appliances']
 df.drop('appliances', axis=1, inplace=True)
 
 # remove id column and store as series in case needed later
@@ -55,6 +65,12 @@ sns.heatmap(df_corr, annot=True, cmap='coolwarm')
 plt.show() 
     # many features have high correlation with each other
     # will have to do vif analysis to check for multicollinearity in build_features.py
+
+# add target variable and id back to df
+df['appliances'] = appliances
+df['id'] = id_col
+
+df.info()
 
 # save df as csv
 df.to_csv(r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\interim\vw_train_clean.csv', index=True)
