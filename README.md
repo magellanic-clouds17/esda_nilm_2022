@@ -16,6 +16,9 @@ The approach for this project will follow these steps:
 6. **Performance Evaluation**: Use appropriate metrics to assess the model's predictive accuracy and its ability to generalize to unseen data.
 
 ## Current Score on Kaggle Competition 
+![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/a01ed26d-eaec-489b-bdb6-d7a4461af3be)
 
+## Leaderboard
+![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/01fb6ae9-e948-49e1-bf89-5ae9f943979d)
 
 ---
