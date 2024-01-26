@@ -91,14 +91,14 @@ xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes
             max_depth=3, learning_rate=0.1, n_estimators=800)
 '''
 #model version 1_3
-xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
+xgb_clf = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
             max_depth=3, learning_rate=0.1, n_estimators=2500)
 
 # fit model to training data
-predictions = xgb_model.fit(X_train, y_train).predict(X_test)
+predictions = xgb_clf.fit(X_train, y_train).predict(X_test)
 
 # plot feature importance
-xgb.plot_importance(xgb_model)
+xgb.plot_importance(xgb_clf)
 plt.rcParams['figure.figsize'] = [10, 10]
 plt.show()
 
