@@ -1,24 +1,33 @@
-# NILM ESDA 2022 Project (*!ONGOING!*)
+# ESDA NILM 2022 Kaggle Competition Project
 
 ## Project Overview
-This project is an ongoing effort to use data frome the 2022 Kaggle ESDA NILM (Non-Intrusive Load Monitoring) competition to demonstrate my abilites in data science and machine learning. The challenge involves classifying appliances based on their energy consumption patterns using numerical time-series data. The goal is to develop a predictive model that can accurately determine the type of appliance from its unique energy usage profile.
+This repository contains my work for the ESDA NILM 2022 Kaggle competition, where the objective was to classify appliances based on energy consumption data. The project showcases a blend of data cleaning, exploratory analysis, feature engineering, and machine learning using XGBoost. The final submission achieved a Kaggle score of 0.96194, potentially placing first in the competition.
 
-## Data
-The dataset is sourced from the "ESDA NILM 2022" Kaggle competition. It includes hourly measurements of electrical parameters such as active power, current, voltage, and various transient and harmonic features. The data spans from 2016 to 2018 and is used to predict appliance usage for the year 2019.
+## Files in the Repository
+- `environment.yml`: Defines the project's Python environment and dependencies.
+- `eda.py`: Script for exploratory data analysis and initial data cleaning.
+- `build_features.py` & `build_features_v2.py`: Scripts for feature engineering, including handling multicollinearity,outlier removal, and temporal data utilization.
+- `train_predict_model.py` & `train_predict_model_v2.py`: Model training and prediction scripts using XGBoost, with different iterations and parameter tuning.
 
-## Provisional Methodology
-The approach for this project will follow these steps:
-1. **Data Cleaning and Preprocessing**: Ensure data quality by handling missing values, removing duplicates, and addressing any anomalies.
-2. **Exploratory Data Analysis (EDA)**: Conduct a thorough examination of the data to understand underlying patterns and relationships, using statistical summaries and visualizations.
-3. **Feature Engineering**: Develop features that capture the temporal nature of the data, such as lag features, rolling window statistics, and extracted time-based attributes.
-4. **Model Selection**: Evaluate different machine learning models, with an initial focus on XGBoost due to its robustness and effectiveness in handling numerical features for classification tasks.
-5. **Model Training and Validation**: Implement a rigorous training and validation process to fine-tune the model and prevent overfitting.
-6. **Performance Evaluation**: Use appropriate metrics to assess the model's predictive accuracy and its ability to generalize to unseen data.
+## Key Insights
+- Rigorous exploratory analysis and cleaning were pivotal in understanding the dataset.
+- Feature engineering focused on reducing multicollinearity and leveraging timestamp data.
+- Model tuning in XGBoost played a crucial role in improving the prediction accuracy from 0.82 to 0.96 Kaggle score.
 
-## Current Score on Kaggle Competition 
+## Usage
+To replicate the analysis or use the scripts, clone the repository and set up the environment using the provided `environment.yml` file. Each Python script is documented for ease of understanding and modification.
+
+For detailed analysis and results, please refer to individual scripts and comments within the repository.
+
+## Results
+
+### Current Score on Kaggle Competition 
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/c399200e-3f73-4934-a4a3-bc42136fbf92)
 
-## Leaderboard (for comparison)
+### Leaderboard (for comparison)
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/01fb6ae9-e948-49e1-bf89-5ae9f943979d)
+
+### Final Feature Importance
+![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/71a222d5-903a-4593-b8a2-511d4302030d)
 
 ---
