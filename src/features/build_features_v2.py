@@ -4,7 +4,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-
+''' In this version I first only removed outliers and then also features with high VIF (multicolinarity)
+    Submission_v2 and v3
+    Kaggle result: 0.80 and 0.80 (worse than v1)
+'''
 # read vw_train_clean.csv from r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\interim\vw_train_clean.csv'
 train_data_path = r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\interim\vw_train_clean.csv'
 df = pd.read_csv(train_data_path, index_col=0, dtype={'id': int})

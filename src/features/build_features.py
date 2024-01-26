@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
+''' In this version I only removed features with high VIF (multicolinarity)
+    Submission_v1
+    Kaggle result: 0.82933 (best so far)
+'''
+
 # read vw_train_clean.csv from r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\interim\vw_train_clean.csv'
 train_data_path = r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\interim\vw_train_clean.csv'
 df = pd.read_csv(train_data_path, index_col=0, dtype={'id': int})
@@ -43,8 +48,8 @@ def get_vif(df):
     return vif
 
 # determine VIF (variance inflation factor) to check for multicollinearity using get_vif function
-vif = get_vif(df)
-vif
+#vif = get_vif(df)
+#vif
 
 
 ## step by step remove features with high VIF (> 10) and check VIF again
@@ -55,16 +60,16 @@ df_low_corr = df.drop(['hertz', 'transient6', 'apparentPower', 'transient5', 'tr
 df_low_corr.info()
 
 # check VIF again
-vif = get_vif(df_low_corr)
+#vif = get_vif(df_low_corr)
 
 # remove 'transient2' and 'transient1' from df_low_corr
 df_low_corr.drop(['transient2', 'transient1'], axis=1, inplace=True)
 
 # check VIF again
-vif = get_vif(df_low_corr)
-vif
+#vif = get_vif(df_low_corr)
+#vif
 
-# add time columns back to df_low_corr
+# add time columns back to df_low_corr on timestamp index
 df_low_corr['year'] = df['year']
 df_low_corr['month'] = df['month']
 df_low_corr['day'] = df['day']
@@ -72,12 +77,13 @@ df_low_corr['day_of_week'] = df['day_of_week']
 df_low_corr['hour'] = df['hour']
 df_low_corr['minute'] = df['minute']
 
-# add target variable and id back to df_low_corr
+# add target variable and id back to df_low_corr on timestamp index
 df_low_corr['appliances'] = appliances
 df_low_corr['id'] = id_col
-
+#df_low_corr.set_index('id', inplace=True)
 
 # save df_low_corr as csv in data/processed
 df_low_corr.to_csv(r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\processed\df_low_corr.csv', index=True)
 
 df_low_corr.info()
+df_low_corr.columns
