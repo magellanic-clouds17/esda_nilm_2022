@@ -18,7 +18,7 @@ The approach for this project will follow these steps:
 ## Current Score on Kaggle Competition 
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/c399200e-3f73-4934-a4a3-bc42136fbf92)
 
-## Leaderboard
+## Leaderboard (for comparison)
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/01fb6ae9-e948-49e1-bf89-5ae9f943979d)
 
 ---
