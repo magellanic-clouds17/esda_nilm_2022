@@ -27,7 +27,7 @@ For detailed analysis and results, please refer to individual scripts and commen
 ### Leaderboard (for comparison)
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/01fb6ae9-e948-49e1-bf89-5ae9f943979d)
 
-### Final Feature Importance
+### Final Feature Selection and Importance
 ![image](https://github.com/magellanic-clouds17/esda_nilm_2022/assets/72970703/71a222d5-903a-4593-b8a2-511d4302030d)
 
 ---
