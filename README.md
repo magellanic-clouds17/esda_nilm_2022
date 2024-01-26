@@ -1,7 +1,7 @@
 # ESDA NILM 2022 Kaggle Competition Project
 
 ## Project Overview
-This repository contains my work for the ESDA NILM (Non-Intrusive Load Monitoring) 2022 Kaggle competition, where the objective was to classify appliances based on energy consumption data. The project showcases a blend of data cleaning, exploratory analysis, feature engineering, and machine learning using XGBoost. The final submission achieved a Kaggle score of 0.96194, potentially placing first in the competition (second place score: 0.91).
+This repository contains my work for the ESDA NILM (Non-Intrusive Load Monitoring) 2022 Kaggle competition, where the objective was to classify appliances based on energy consumption data. The project showcases a blend of data cleaning, exploratory analysis, feature engineering, and machine learning using XGBoost. The final submission achieved a Kaggle score of 0.96194, potentially placing first in the competition (official first place score: 0.91).
 
 ## Files in the Repository
 - `environment.yml`: Defines the project's Python environment and dependencies.
