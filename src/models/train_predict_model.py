@@ -5,6 +5,11 @@ import seaborn as sns
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
+''' In this version I only removed features with high VIF (multicolinarity)
+    Submission_v1 and v1_1
+    Kaggle result: 0.82933 and 0.93260 (best so far)
+'''
+
 # read in low_corr_train.csv from data/processed with index int and index_col=False
 train_data_path = r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\processed\df_low_corr.csv'
 df = pd.read_csv(train_data_path, index_col=0)
@@ -22,7 +27,6 @@ y_train = df[['appliances']]
 
 X_train.info()
 y_train.info()
-
 
 # encode y_train['appliances'] and add it back to y_train
 le = LabelEncoder()
@@ -71,12 +75,34 @@ print(X_test.info())
 # instantiate xgb model
 num_classes = np.unique(y_train.values).shape[0]
 
+'''
+#model version 1
 xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
             max_depth=3, learning_rate=0.1, n_estimators=100, subsample=0.8, colsample_bytree=0.8)
+'''
+'''
+# model version 1_1
+xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
+            max_depth=3, learning_rate=0.1, n_estimators=500)
+'''
+'''
+# model version 1_2
+xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
+            max_depth=3, learning_rate=0.1, n_estimators=800)
+'''
+#model version 1_3
+xgb_model = xgb.XGBClassifier(objective='multi:softprob', num_class= num_classes, 
+            max_depth=3, learning_rate=0.1, n_estimators=2500)
 
 # fit model to training data
 predictions = xgb_model.fit(X_train, y_train).predict(X_test)
 
+# plot feature importance
+xgb.plot_importance(xgb_model)
+plt.rcParams['figure.figsize'] = [10, 10]
+plt.show()
+
+## PREPARE SUBMISSION FILE
 # deencode predictions
 predictions = le.inverse_transform(predictions)
 
@@ -93,14 +119,14 @@ X_test.reset_index(inplace=True)
 X_test.drop('timestamp', axis=1, inplace=True)
 X_test 
 
+
 # read sample_submission.csv file and compare to X_test
 raw_data_path_test = r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\raw\sample_submission.csv'
 df_sample_submission = pd.read_csv(raw_data_path_test, index_col=False, dtype={'id': int})
 df_sample_submission
 
 # save X_test as submission_v1.csv
-X_test.to_csv(r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\processed\submission_v1.csv', index=False)
-
+X_test.to_csv(r'C:\Users\Latitude\Desktop\Kaggle\esda_nilm_2022\data\processed\submission_v1_3.csv', index=False)
 
 
 
